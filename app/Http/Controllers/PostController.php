@@ -25,7 +25,7 @@ class PostController extends Controller
             'body' => 'required'
         ]);
 
-        $post = Post::create($fields);
+        $post = $request->user()->posts()->create($fields);
 
         // return ['post' => $post];
         return $post;
