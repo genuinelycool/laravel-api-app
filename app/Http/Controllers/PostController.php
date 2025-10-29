@@ -23,7 +23,7 @@ class PostController extends Controller implements HasMiddleware
     public function index()
     {
         return Post::with('user')->latest()->get();
-        
+
         // return Post::all();
     }
 
@@ -48,8 +48,9 @@ class PostController extends Controller implements HasMiddleware
      */
     public function show(Post $post)
     {
-        // return ['post' => $post];
-        return $post;
+        return ['post' => $post, 'user' => $post->user];
+
+        // return $post;
     }
 
     /**
