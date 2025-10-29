@@ -37,8 +37,8 @@ class PostController extends Controller implements HasMiddleware
 
         $post = $request->user()->posts()->create($fields);
 
-        // return ['post' => $post];
-        return $post;
+        return ['post' => $post, 'user' => $post->user];
+        // return $post;
     }
 
     /**
